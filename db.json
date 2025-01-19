@@ -1,0 +1,39 @@
+{
+  "people": [
+    {
+      "name": "Will",
+      "surname": "Smith",
+      "sex": "male",
+      "age": 56,
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg/800px-TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg"
+    },
+    {
+      "name": "Margot",
+      "surname": "Robbie",
+      "sex": "female",
+      "age": 34,
+      "photo": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:eco/blog/wordpress/prod/sites/1/2023/07/10122202/blz_conteudo_loucas_2023_julho_interna_cabelo-de-margot-robbie-um-raio-x-do-visual-da-atriz_3.jpg"
+    },
+    {
+      "name": "Cillian",
+      "surname": "Murphy",
+      "sex": "male",
+      "age": 48,
+      "photo": "https://irlandnews.com/wp-content/uploads/Cillian_Murphy-2014-scaled.jpg"
+    },
+    {
+      "name": "Angelina",
+      "surname": "Jolie",
+      "sex": "female",
+      "age": 49,
+      "photo": "https://m.media-amazon.com/images/M/MV5BODg3MzYwMjE4N15BMl5BanBnXkFtZTcwMjU5NzAzNw@@._V1_.jpg"
+    },
+    {
+      "name": "Clint",
+      "surname": "Eastwood",
+      "sex": "male",
+      "age": 94,
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Clint_Eastwood_at_2010_New_York_Film_Festival.jpg/640px-Clint_Eastwood_at_2010_New_York_Film_Festival.jpg"
+    }
+  ]
+}
