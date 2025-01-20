@@ -1,56 +1,77 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // GET Request
-  function req() {
+  const form = document.querySelector("form");
+
+  function req(e) {
+    e.preventDefault();
+
+    let formData = new FormData(form);
+    formData.append("id", Math.random());
+
+    let obj = {};
+    formData.forEach((value, key) => {
+      obj[key] = value;
+    });
+    // let json = JSON.stringify(obj);
+
     // XMLHttpRequest
+    // GET Request
 
     // const request = new XMLHttpRequest();
-    // request.open("GET", "http://localhost:3000/people");
+    // request.open("POST", "http://localhost:3000/people");
     // request.setRequestHeader("Content-type", "application/json; charset=utf-8");
-    // request.send();
+    // request.send(json);
     // request.addEventListener("load", function () {
     //   if (this.status == 200) {
     //     let data = JSON.parse(request.response);
     //     console.log(data);
-    //     createCards(data);
+    //     // createCards(data);
     //   } else {
     //     console.error("Что-то пошло не так");
     //   }
     // });
 
-    getResource("http://localhost:3000/people")
-      .then((data) => createCards(data.data))
-      .catch((err) => console.error(err));
+    // getResource("http://localhost:3000/people", obj)
+    //   .then((data) => createCards(data.data))
+    //   .catch((err) => console.error(err));
 
-    this.remove();
+    axios.post("http://localhost:3000/people", obj);
+
+    // this.remove();
   }
 
-  document
-    .querySelector("button")
-    .addEventListener("click", req, { once: true });
+  document;
+  form.addEventListener("submit", (e) => req(e), { once: true });
 
   // fetch api
+  // POST Request - Do not forget connect your project with local host.
 
-  // async function getResource(url) {
-  //   const res = await fetch(`${url}`);
+  async function getResource(url, data) {
+    const res = await fetch(`${url}`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  //   if (!res.ok) {
-  //     throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-  //   }
-
-  //   return await res.json();
-  // }
-
-  // axios api
-
-  async function getResource(url) {
-    const res = await axios(`${url}`);
-
-    if (res.status !== 200) {
+    if (!res.ok) {
       throw new Error(`Could not fetch ${url}, status: ${res.status}`);
     }
 
-    return res;
+    return await res.json();
   }
+
+  // axios api
+
+  // async function getResource(url) {
+  //   const res = await axios(`${url}`);
+
+  //   if (res.status !== 200) {
+  //     throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+  //   }
+
+  //   return res;
+  // }
 
   function createCards(response) {
     response.forEach((item) => {
