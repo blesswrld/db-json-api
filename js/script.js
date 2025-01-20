@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+  // GET Request
   function req() {
     // const request = new XMLHttpRequest();
     // request.open("GET", "http://localhost:3000/people");
